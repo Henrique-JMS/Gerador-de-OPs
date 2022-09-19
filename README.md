@@ -9,25 +9,25 @@
  
  (Clique na imagem abaixo para reproduzir o gif.)
  
- [GIF FUNCIONAMENTO]
+ ![](res/FuncionamentoGIF.gif)
  
  A imagem a seguir mostra o padrão de carteira de pedidos do cliente:
  
- [CARTEIRA DE PEDIDOS DE COMPRA]
+ ![](res/Carteiradepedidosdecompra.png)
  
  A imagem a seguir mostra a carteira de pedidos depois de ser organizada para a geração das ordens de produção:
  
- [CARTEIRA DE PEDIDOS ORGANIZADA]
+ ![](res/Carteiraorganizada.png)
  
  A próxima imagem mostra o modelo de Ordem de Produção (OP) desenvolvido pelo fornecedor:
  
- [OP MODELO]
+ ![](res/OPModelo.png)
  
  O script desenvolvido preenche o modelo com os dados fornecidos na carteira, como código, revisão, pedido e prazo. Outros dados como material da peça, insumos necessários, espessura da chapa, dependem do desenho técnico da peça, portanto, serão analisados e preenchidos em outra ocasião.
  
  A imagem a seguir mostra o resultado de uma das ordens de produção criadas.
  
- [OP GERADA EXEMPLO]
+ ![](res/OpGeradaExemplo.png)
  
  O script irá registrar também a criação de cada uma das novas ordens de produção na coluna "OP" da carteira, e por fim gerar uma carteira atualizada.
 
