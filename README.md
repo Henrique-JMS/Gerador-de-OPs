@@ -1,6 +1,6 @@
  O projeto a seguir apresenta um aplicativo escrito na linguagem de programação Python3, que automatiza o processo de criação de ordens de produção conforme uma padronização dos documentos.
  
- Este projeto utiliza as ferramentas: VSCode, GitHub, MS Excel e Python3 (Pandas, openpyxl, PySimpleGUI).
+ Este projeto utiliza as ferramentas: VSCode, GitHub, MS Excel e Python3 (Pandas, openpyxl, FreeSimpleGUI).
  O código fonte e as planilhas utilizadas se encontram nos arquivos do repositório.
  
  Considere a situação: Uma empresa fictícia envia todas as semanas uma nova carteira de pedidos de compra, sempre organizada no mesmo padrão. A empresa fornecedora é uma fábrica de peças de chapa metálica, que deseja criar um script que automatize o processo de criação das ordens de produção para os pedidos da carteira, para isso, ela utiliza um modelo de ordem de produção, e cria um programa em Python para manipular estes dados.
