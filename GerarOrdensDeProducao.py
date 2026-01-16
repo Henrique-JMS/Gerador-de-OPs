@@ -1,7 +1,7 @@
 import pandas as pd
 import openpyxl
 import numpy as np
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 from pathlib import Path
 
 # Carrega o arquivo que serve como modelo para a confecção das ordens de produção
