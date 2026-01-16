@@ -1,7 +1,6 @@
 import pandas as pd
 import openpyxl
 import numpy as np
-import FreeSimpleGUI as sg
 from pathlib import Path
 
 # Carrega o arquivo que serve como modelo para a confecção das ordens de produção
@@ -9,7 +8,12 @@ caminhoOPModelo = Path(__file__).with_name('OP Modelo.xlsx')
 opModelo = openpyxl.load_workbook(caminhoOPModelo)
 opPlanilha = opModelo['Plan1']
 
-def manipularCarteira(caminhoDaCarteira):
+def manipularCarteira(caminhoDaCarteira: str):
+    """
+    Essa função faz a limpeza dos dados da carteira de pedidos.
+    
+    :param caminhoDaCarteira: String ou Path para a carteira
+    """
     # Cria um objeto DataFrame, do pacote Pandas, para a carteira.
     carteira = pd.read_excel(caminhoDaCarteira)
 
@@ -40,6 +44,12 @@ def manipularCarteira(caminhoDaCarteira):
     return carteira
 
 def gerarOrdemDeProducao(caminhoDaCarteira, caminhoDaPasta):
+    """
+    Essa função gera as Ordens de Produção (OP) para os itens da carteira
+    
+    :param caminhoDaCarteira: String ou Path para a carteira
+    :param caminhoDaPasta: Caminho da pasta onde serão salvas as OPs
+    """
     ct = 1
     carteiraOrganizada = manipularCarteira(caminhoDaCarteira)
     # A lista ordensPGeradas é utilizada como referência para atualizar a carteira.
@@ -98,29 +108,5 @@ def gerarOrdemDeProducao(caminhoDaCarteira, caminhoDaPasta):
     print("Operação finalizada com sucesso.")
 
 
-# Criação da interface de usuário, utilizando o pacote PySimpleGUI
-sg.theme('GreenTan')
-layout = [[sg.Text('Selecione a carteira de pedidos:')],      
-          [sg.Input(key='-ARQUIVOSELECIONADO-', readonly=True), sg.FileBrowse()],
-          [sg.Text('Selecione a pasta onde salvar os arquivos:')],    
-          [sg.Input(key='-PASTASELECIONADA-', readonly=True), sg.FolderBrowse()],  
-          [sg.Button('Gerar', key='-BTNGERAR-')],
-          [sg.Output(size=(45,5))]]      
-
-window = sg.Window('Gerar ordens de produção', layout)      
-
-while True:           
-    event, values = window.read() 
-    #print(event, values)       
-    if event == sg.WIN_CLOSED or event == 'Exit':
-        break      
-
-    if event == '-BTNGERAR-':
-        caminhoCarteira = values['-ARQUIVOSELECIONADO-']
-        caminhoPasta = values['-PASTASELECIONADA-']
-        gerarOrdemDeProducao(caminhoCarteira, caminhoPasta)
-        #print(event, values)
-
-window.close()
 
 
