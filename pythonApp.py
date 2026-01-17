@@ -1,4 +1,5 @@
 import FreeSimpleGUI as sg
+from pathlib import Path
 from GerarOrdensDeProducao import gerarOrdemDeProducao
 
 # Criação da interface de usuário, utilizando o pacote FreeSimpleGUI
@@ -6,7 +7,7 @@ sg.theme('GreenTan')
 layout = [[sg.Text('Selecione a carteira de pedidos:')],      
           [sg.Input(key='-ARQUIVOSELECIONADO-', readonly=True), sg.FileBrowse()],
           [sg.Text('Selecione a pasta onde salvar os arquivos:')],    
-          [sg.Input(key='-PASTASELECIONADA-', readonly=True), sg.FolderBrowse()],  
+          [sg.Input(key='-PASTASELECIONADA-', readonly=True, default_text=f'{Path.cwd()}/Output'), sg.FolderBrowse()],  
           [sg.Button('Gerar', key='-BTNGERAR-')],
           [sg.Output(size=(45,5))]]      
 
